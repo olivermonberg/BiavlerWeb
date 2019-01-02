@@ -1,0 +1,55 @@
+﻿@model BiavlerWeb.Models.Varroataelling
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Varroataelling</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bistade)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bistade)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Dato)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Dato)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AntalVarroamider)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AntalVarroamider)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Observationsvarighed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Observationsvarighed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bemaerkning)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Bemaerkning)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<BiavlerWeb.Models.Varroataelling>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bistade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntalVarroamider)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observationsvarighed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bemaerkning)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bistade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AntalVarroamider)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observationsvarighed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bemaerkning)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

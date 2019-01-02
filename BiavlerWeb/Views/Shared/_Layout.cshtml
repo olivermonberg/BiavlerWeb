@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
+
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -30,9 +31,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Varroataellings" asp-action="Create">Tilfoej varroataelling</a></li>
-                    <li><a asp-area="" asp-controller="Varroataellings" asp-action="Index">Se varroataellinger</a></li>
+                    <li><a class="menuItem" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="menuItem" asp-area="" asp-controller="Varroataellings" asp-action="Create">Tilfoej varroataelling</a></li>
+                    <li><a class="menuItem" asp-area="" asp-controller="Varroataellings" asp-action="Index">Se varroataellinger</a></li>
+                    <li><a class="menuItem" asp-area="" asp-controller="Varroataellings" asp-action="MiddelVaerdi">Se middelvaerdier</a></li>
                    </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -41,13 +43,15 @@
 
     <partial name="_CookieConsentPartial" />
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - BiavlerWeb</p>
-        </footer>
-    </div>
+  
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer id="footerId">
+                <p>&copy; 2019 - BiavlerWeb</p>
+            </footer>
+        </div>
+
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

@@ -32,6 +32,27 @@ namespace BiavlerWeb.Controllers
             return View(await _context.Varroataellinger.Where(id => id.UserId == userId).ToListAsync());
         }
 
+        // GET: Varroataellings
+        [Authorize]
+        public async Task<IActionResult> MiddelVaerdi()
+        {
+            //var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var er = _context.Users.Select(postal => postal.PostalCode);
+
+            var users = await _context.Users.ToListAsync();
+
+            foreach (var user in users)
+            {
+                var taellinger = await _context.Varroataellinger.Where(id => id.UserId == user.Id).ToListAsync();
+                
+            }
+
+            var th = _context.Varroataellinger.Include("AspNetUsers");
+
+            return View(await _context.Varroataellinger.ToListAsync());
+        }
+
         // GET: Varroataellings/Details/5
         public async Task<IActionResult> Details(long? id)
         {
